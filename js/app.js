@@ -414,8 +414,8 @@
 
   navigator.geolocation.watchPosition(locationUpdate, locationUpdateFail, {
     enableHighAccuracy: true,
-    maximumAge: 1000,
-    timeout: 27000
+    maximumAge: 100,
+    timeout: 100
   });
 
   setNightmode(false);
