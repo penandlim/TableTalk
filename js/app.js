@@ -412,11 +412,16 @@
   popup.addEventListener("click", popupClose);
   popupContents.addEventListener("click", popupContentsClick);
 
-  navigator.geolocation.watchPosition(locationUpdate, locationUpdateFail, {
-    enableHighAccuracy: true,
-    maximumAge: 30000000,
-    timeout: 3000
-  });
+
+  //fetch new GPS info every 10000 milliseconds
+  window.setInterval(function ()
+  {
+      navigator.geolocation.getCurrentPosition(locationUpdate, locationUpdateFail, {
+          enableHighAccuracy: true,
+          maximumAge: 0,
+          timeout: 10000 //large timeout to accomodate slow GPS lock on some devices
+      });
+  }, 5000);  //update current location every 7 seconds
 
   setNightmode(false);
   checkLockable();
