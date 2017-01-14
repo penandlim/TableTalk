@@ -303,8 +303,8 @@
     positionCurrent.lat = position.coords.latitude;
     positionCurrent.lng = position.coords.longitude;
 
-    positionLat.textContent = decimalToSexagesimal(positionCurrent.lat, "lat");
-    positionLng.textContent = decimalToSexagesimal(positionCurrent.lng, "lng");
+    positionLat.textContent = positionCurrent.lat;
+    positionLng.textContent = positionCurrent.lng;
   }
 
   function locationUpdateFail(error) {
@@ -413,15 +413,15 @@
   popupContents.addEventListener("click", popupContentsClick);
 
 
-  //fetch new GPS info every 10000 milliseconds
+  //fetch new GPS info every 3000 milliseconds
   window.setInterval(function ()
   {
       navigator.geolocation.getCurrentPosition(locationUpdate, locationUpdateFail, {
           enableHighAccuracy: true,
-          maximumAge: 0,
-          timeout: 10000 //large timeout to accomodate slow GPS lock on some devices
+          maximumAge: 1,
+          timeout: 3000 //large timeout to accomodate slow GPS lock on some devices
       });
-  }, 5000);  //update current location every 7 seconds
+  }, 3000);  //update current location every 3 seconds
 
   setNightmode(false);
   checkLockable();
