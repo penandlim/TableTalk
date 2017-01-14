@@ -415,7 +415,7 @@
   navigator.geolocation.watchPosition(locationUpdate, locationUpdateFail, {
       enableHighAccuracy: true,
       maximumAge: 0,
-      timeout: 5000 //large timeout to accomodate slow GPS lock on some devices
+      timeout: 10000 //large timeout to accomodate slow GPS lock on some devices
   });
 
   setNightmode(false);
