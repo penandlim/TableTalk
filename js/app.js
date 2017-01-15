@@ -198,11 +198,11 @@
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + (distance / -1.2) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / -3) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + (distance / -1.2) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / -3) + "px)";
                 }
             }
 
