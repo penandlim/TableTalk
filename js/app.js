@@ -26,7 +26,7 @@
     request.send();
 
     
-
+document.getElementById("send").addEventListener("click", sendMessage);
 
 function loadMessages() {
     document.getElementById('typeBox').disabled = false;
