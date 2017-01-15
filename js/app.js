@@ -65,7 +65,7 @@ function sendMessage() {
   });
 
   var xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
+  xhr.withCredentials = false;
 
   xhr.addEventListener("readystatechange", function () {
   
