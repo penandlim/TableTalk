@@ -1,28 +1,28 @@
 (function () {
   "use strict";
 
-    // var request = new XMLHttpRequest();
-    // request.open('GET', '//35.161.59.228:12345/fakedata', true);
-    // request.onload = function() {
-    //     if (this.status === 200) {
-    //         var jsonResponse = JSON.parse(this.responseText);
-    //         for (var i = 0; i < jsonResponse.length; i++) {
-    //             var new_word = document.createElement("div");
-    //             new_word.className = "name";
-    //             new_word.setAttribute("_lat", jsonResponse[i].lat);
-    //             new_word.setAttribute("_lng", jsonResponse[i].lon);
-    //             new_word.setAttribute("_pop", jsonResponse[i].pop);
-    //             new_word.setAttribute("_id", jsonResponse[i].mongoID);
-    //             new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
-    //             new_word.innerText = jsonResponse[i].messageHeading;
-    //             document.getElementById("words").appendChild(new_word);
-    //         }
-    //     }
-    //     else {
-    //         alert('Request failed.  Returned status of ' + this.status);
-    //     }
-    // };
-    // request.send();
+    var request = new XMLHttpRequest();
+    request.open('GET', '//35.161.59.228:12345/fakedata', true);
+    request.onload = function() {
+        if (this.status === 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+            for (var i = 0; i < jsonResponse.length; i++) {
+                var new_word = document.createElement("div");
+                new_word.className = "word";
+                new_word.setAttribute("_lat", jsonResponse[i].lat);
+                new_word.setAttribute("_lng", jsonResponse[i].lon);
+                new_word.setAttribute("_pop", jsonResponse[i].pop);
+                new_word.setAttribute("_id", jsonResponse[i].mongoID);
+                new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
+                new_word.innerText = jsonResponse[i].messageHeading;
+                document.getElementById("words").appendChild(new_word);
+            }
+        }
+        else {
+            alert('Request failed.  Returned status of ' + this.status);
+        }
+    };
+    request.send();
 
 
     //set to true for debugging output
