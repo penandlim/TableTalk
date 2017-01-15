@@ -217,7 +217,17 @@
                     item.style.fontSizeAdjust = "1.0";
                 }
 
-
+                //making new topics glow potentialls 
+                /*
+                var prevLatestMessage = item.getAttribute("latestMessage");
+                watch(locationUpdate, function(){
+                  var newLatestMessage = item.getAttribute("latestMessage");
+                  if(prevLatestMessage < newLatestMessage) {
+                    item.style.boxShadow = "0 0 10px";
+                    prevLatestMessage = newLatestMessage; 
+                  }
+                }) 
+                */        
             }
 
         } else {

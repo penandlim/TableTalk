@@ -268,20 +268,34 @@ header {
     width: 30%; 
     height: 60%; 
     position: absolute; 
-    left: 10%; 
-    bottom: 10%; 
+    right: 10%; 
+    top: 10%; 
     background:black; 
     font-family: digital; 
     z-index: 1; 
     overflow-y: scroll;
     overflow-x: hidden; 
   }
-  .type {
-    width: 28%;
+
+  .enterMessage {
+    width: 20%; 
+    height: 60%; 
+    position: absolute; 
+    left: 35%; 
+    bottom: 40%; 
+  }
+
+  #typeBox {
     position: absolute; 
     margin: 5px; 
-    left: 0%; 
-    bottom: 0%; 
+    left: 5%; 
+    bottom: 25%; 
+    width: 98%; 
+    height: 25px; 
+    margin:5px; 
+    font-family: digital; 
+    font-weight: bold; 
+    font-size: 20px;
   }
   h2.message {
     margin: 10px; 
