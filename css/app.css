@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Muli;
-  src: url("../fonts/Muli-Light.ttf");
+  font-family: digital;
+  src: url("../fonts/digital-7.ttf");
 }
 
 .word {
@@ -9,17 +9,25 @@
   z-index: 2; /* Make sure its above other items. */
   top: 50%;
   left: 50%;
-  margin-top: 10%; /* Changes with height. */
+  margin-top: -10%; /* Changes with height. */
   margin-left: -10%; /* Your width divided by 2. */
   text-align: center;
 }
 
+
+* {
+  box-sizing: border-box;
+}
+
 h1, h2, h3, h4 {
-  font-family: Muli, serif;
+  font-family: digital, serif;
+  font-weight: bold;
+
 }
 
 h1 {
   font-size: 1.2rem;
+  font-weight: bold;
   padding-left: 1.7rem;
   background: transparent url(../images/logo.png) 0% 50% no-repeat;
   background-size: 1.2rem;
@@ -27,12 +35,13 @@ h1 {
 
 
 html {
-  font-family: Muli, sans-serif;
+  font-family: digital, sans-serif;
+  font-weight: bold;
   font-size: 16px;
   background-color: white;
   color: white;
 
-  background: white url(../images/bg.jpg) 50% 50% no-repeat;
+  background: white url(../images/coffeeshop.jpg) 50% 50% no-repeat;
   background-size: cover;
   height: 100%;
 }
@@ -203,9 +212,6 @@ header {
   }
 
 
-
-
-
 .popup {
   display: none;
   position: fixed;
@@ -257,7 +263,30 @@ header {
         cursor: pointer;
       }
 
-
+  
+  div.chat {
+    width: 30%; 
+    height: 60%; 
+    position: absolute; 
+    left: 10%; 
+    bottom: 10%; 
+    background:black; 
+    font-family: digital; 
+    z-index: 1; 
+    overflow-y: scroll;
+    overflow-x: hidden; 
+  }
+  .type {
+    width: 28%;
+    position: absolute; 
+    margin: 5px; 
+    left: 0%; 
+    bottom: 0%; 
+  }
+  h2.message {
+    margin: 10px; 
+    margin-bottom: 15px;
+  }
 
 html.nightmode {
   background: black;
@@ -281,4 +310,3 @@ html.nightmode {
   html.nightmode .btn svg * {
     fill: rgba(127, 127, 127, 0.5);
   }
-
