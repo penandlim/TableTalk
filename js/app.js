@@ -213,7 +213,7 @@
                 if(isCloseToInteractWith) { 
                   document.getElementById('typeBox').disabled = false;
                   document.getElementById('send').disabled = false;
-                  document.getElementById('chat').style.visibility = visible;
+                  document.getElementById('chat').style.visibility = "visible";
                 } 
 
                 // Apply correct transforms
