@@ -277,8 +277,7 @@ header {
     font-size: 20px;
   }
   h2.message {
-    margin: 10px; 
-    margin-bottom: 15px;
+    margin: 0px;  
   }
 
 html.nightmode {
