@@ -37,6 +37,7 @@ function loadMessages() {
 
     var request = new XMLHttpRequest();
     var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + this.getAttribute("_id");
+    var save = this.getAttribute("_id");
     request.open('GET', url, true);
     request.onload = function() {
         if (this.status === 200) {
@@ -47,7 +48,7 @@ function loadMessages() {
                 new_message.innerText = jsonResponse[i].msg;
                 document.getElementById("chatLog").appendChild(new_message);
 
-                document.getElementById("typeBox").setAttribute("_msgId",  this.getAttribute("_id"));
+                document.getElementById("typeBox").setAttribute("_msgId",  save);
             }
         }
         else {
