@@ -274,7 +274,7 @@ function loadMessages(msgId) {
 
     function showHeadingWarning() {
         if (!warningHeadingShown) {
-            popupOpen("noorientation");
+            console.log("No orientation!");
             warningHeadingShown = true;
         }
     }
