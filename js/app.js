@@ -39,6 +39,7 @@ function loadMessages() {
     var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + this.getAttribute("_id");
     var save = this.getAttribute("_id");
     request.open('GET', url, true);
+    request.withCredentials = false;
     request.onload = function() {
         if (this.status === 200) {
             var jsonResponse = JSON.parse(this.responseText);
