@@ -42,7 +42,7 @@ function loadMessages(msgId) {
             for (var i = 0; i < jsonResponse.length; i++) {
                 var new_message = document.createElement("h2");
                 new_message.className = "message";
-                new_word.innerText = jsonResponse[i].msg;
+                new_message.innerText = jsonResponse[i].msg;
                 document.getElementById("chatLog").appendChild(new_message);
             }
         }
