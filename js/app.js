@@ -67,14 +67,14 @@ function sendMessage() {
   xhr.withCredentials = true;
 
   xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4 && this.status === 200) {
+  
     console.log(this.responseText);
     var new_message = document.createElement("h2");
     new_message.className = "message";
     new_message.innerText = document.getElementById("typeBox").value;
     document.getElementById("chatLog").appendChild(new_message);
     document.getElementById("typeBox").value = "";
-  }
+  
   });
 
   xhr.open("POST", "https://tabletalk.larryschirmer.com:12345/fakedata/post");
