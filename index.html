@@ -45,23 +45,13 @@
 
   <div>Latitude: <span id='position-lat'>&#8943;</span></div>
   <div>Longitude: <span id='position-lng'>&#8943;</span></div>
-  <form class = "enterMessage">
-      <input  type="text" id="typeBox" disabled><br>
-      <input type="submit" id = "send"
-             style="border: 5px solid white; border-radius: 100%; padding: 40px; font-family: digital; font-weight: bold; font-size: 20px; position: absolute; left: 35%; bottom: 0%;"
-             value = "send";
-             disabled><br>
-  </form>
-  <div class = "chat">
-  </div>
 
 
-    <form class = "enterMessage">
-        <input  type="text" id="typeBox" disabled><br>
+
+        <textarea id="typeBox" disabled></textarea>
         <button value="send" id = "send" onclick = "sendMessage()"
             style="border: 5px solid white; border-radius: 100%; padding: 40px; font-family: digital; font-weight: bold; font-size: 20px; position: absolute; left: 35%; bottom: 0%;"
             disabled>
-    </form>
 
     
     <div class = "chat" id = "chatLog"> 
