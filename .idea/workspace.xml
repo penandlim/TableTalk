@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b814f7e-9809-4e78-aa39-1d633b509802" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,10 +34,10 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="209" column="52" lean-forward="false" selection-start-line="209" selection-start-column="52" selection-end-line="209" selection-end-column="52" />
+            <state relative-caret-position="184">
+              <caret line="192" column="48" lean-forward="true" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
               <folding>
-                <marker date="1484491192806" expanded="true" signature="32:1087" ph="..." />
+                <marker date="1484491279918" expanded="true" signature="32:1087" ph="..." />
               </folding>
             </state>
           </provider>
@@ -612,12 +611,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1484432035617</updated>
-      <workItem from="1484432037638" duration="30151000" />
+      <workItem from="1484432037638" duration="30250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30151000" />
+    <option name="totallyTimeSpent" value="30250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="8" y="-7" width="1350" height="749" extended-state="0" />
@@ -682,10 +681,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="209" column="52" lean-forward="false" selection-start-line="209" selection-start-column="52" selection-end-line="209" selection-end-column="52" />
+        <state relative-caret-position="184">
+          <caret line="192" column="48" lean-forward="true" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
           <folding>
-            <marker date="1484491192806" expanded="true" signature="32:1087" ph="..." />
+            <marker date="1484491279918" expanded="true" signature="32:1087" ph="..." />
           </folding>
         </state>
       </provider>
