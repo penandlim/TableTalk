@@ -14,7 +14,7 @@
                 new_word.setAttribute("_id", jsonResponse[i].mongoID);
                 new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
                 new_word.innerText = jsonResponse[i].messageHeading;
-                new_word.addEventListener("click", loadMessages(new_word.getAttribute("_id")));
+                new_word.addEventListener("click", loadMessages);
                 document.getElementById("words").appendChild(new_word);
             }
         }
@@ -26,15 +26,18 @@
     request.send();
 
     
+document.getElementById("send").addEventListener("click", sendMessage);
 
-
-function loadMessages(msgId) {
+function loadMessages() {
     document.getElementById('typeBox').disabled = false;
     document.getElementById('send').disabled = false;
-    document.getElementById('chatLog').style.visibility = "visible";
+    document.getElementById('chatLog').style.display = "block";
+
+    document.getElementById('chatLog').innerHTML = "";
 
     var request = new XMLHttpRequest();
-    var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + msgId;
+    var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + this.getAttribute("_id");
+    var save = this.getAttribute("_id");
     request.open('GET', url, true);
     request.onload = function() {
         if (this.status === 200) {
@@ -44,6 +47,7 @@ function loadMessages(msgId) {
                 new_message.className = "message";
                 new_message.innerText = jsonResponse[i].msg;
                 document.getElementById("chatLog").appendChild(new_message);
+                document.getElementById("typeBox").setAttribute("_msgId",  save);
             }
         }
         else {
@@ -53,6 +57,32 @@ function loadMessages(msgId) {
     request.send();
 }
 
+function sendMessage() {
+  var data = JSON.stringify({
+  "msg": document.getElementById("typeBox").value,
+  "msgID": document.getElementById("typeBox").getAttribute("_msgId")
+  });
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+  
+    console.log(this.responseText);
+    var new_message = document.createElement("h2");
+    new_message.className = "message";
+    new_message.innerText = document.getElementById("typeBox").value;
+    document.getElementById("chatLog").appendChild(new_message);
+    document.getElementById("typeBox").value = "";
+  
+  });
+
+  xhr.open("POST", "https://tabletalk.larryschirmer.com:12345/fakedata/post");
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.setRequestHeader("cache-control", "no-cache");
+
+  xhr.send(data);
+}
 
     //set to true for debugging output
   var debug = false;

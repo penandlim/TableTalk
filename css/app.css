@@ -242,8 +242,8 @@ header {
       }
 
   
-  div.chat {
-    width: 30%; 
+  #chatLog {
+    width: 90%; 
     height: 60%; 
     position: absolute; 
     right: 0%; 
@@ -253,7 +253,7 @@ header {
     z-index: 1; 
     overflow-y: scroll;
     overflow-x: hidden; 
-    visibility: hidden; 
+    display: none; 
   }
 
   .enterMessage {
@@ -269,16 +269,16 @@ header {
     margin: 5px; 
     left: 5%; 
     bottom: 25%; 
-    width: 98%; 
+    width: 40%; 
     height: 25px; 
     margin:5px; 
     font-family: digital; 
     font-weight: bold; 
     font-size: 20px;
+    z-index: 5; 
   }
   h2.message {
-    margin: 10px; 
-    margin-bottom: 15px;
+    margin: 0px;  
   }
 
 html.nightmode {
