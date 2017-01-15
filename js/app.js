@@ -366,8 +366,7 @@ function loadMessages(msgId) {
     document.addEventListener("webkitfullscreenchange", onFullscreenChange);
     document.addEventListener("mozfullscreenchange", onFullscreenChange);
     document.addEventListener("MSFullscreenChange", onFullscreenChange);
-
-  window.addEventListener("deviceorientation", onHeadingChange);
+    window.addEventListener("deviceorientation", onHeadingChange);
 
   navigator.geolocation.watchPosition(locationUpdate, locationUpdateFail, {
       enableHighAccuracy: true,
