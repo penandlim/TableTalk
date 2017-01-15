@@ -209,12 +209,12 @@
                     isCloseToInteractWith = false;
                 }
 
-                //allows user to contrubute to conversation
-                if(isCloseToInteractWith) { 
-                  document.getElementById('typeBox').disabled = false;
-                  document.getElementById('send').disabled = false;
-                  document.getElementById('chat').style.visibility = "visible";
-                } 
+                // //allows user to contrubute to conversation
+                // if(isCloseToInteractWith) {
+                //   document.getElementById('typeBox').disabled = false;
+                //   document.getElementById('send').disabled = false;
+                //   document.getElementById('chat').style.visibility = "visible";
+                // }
 
                 // Apply correct transforms
                 if (typeof item.style.transform !== "undefined") {
