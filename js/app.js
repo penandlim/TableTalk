@@ -146,7 +146,7 @@
             var words = document.getElementsByClassName("word");
             var lng1 = Math.radians(positionCurrent.lng);
             var lat1 = Math.radians(positionCurrent.lat);
-            document.getElementById("_0").innerText = "(" + lng1 + ", " + lat1 + ")";
+            document.getElementById("_0").innerText = "(" + lat1 + ", " + lng1 + ")";
             for (var i = 0; i < words.length; ++i) {
                 var item = words[i];
                 var lng2 = Math.radians(item.getAttribute("_long"));
