@@ -138,12 +138,12 @@
             positionHng.textContent = (360 - phase | 0) + "°";
 
 
-            // apply rotation to compass rose
-            if (typeof rose.style.transform !== "undefined") {
-                rose.style.transform = "rotateZ(" + positionCurrent.hng + "deg)";
-            } else if (typeof rose.style.webkitTransform !== "undefined") {
-                rose.style.webkitTransform = "rotateZ(" + positionCurrent.hng + "deg)";
-            }
+            // // apply rotation to compass rose
+            // if (typeof rose.style.transform !== "undefined") {
+            //     rose.style.transform = "rotateZ(" + positionCurrent.hng + "deg)";
+            // } else if (typeof rose.style.webkitTransform !== "undefined") {
+            //     rose.style.webkitTransform = "rotateZ(" + positionCurrent.hng + "deg)";
+            // }
 
             var words = document.getElementsByClassName('word');
             var lng1 = Math.radians(positionCurrent.lng);
