@@ -191,19 +191,33 @@
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
                 var distance = radius_earth * c;
+                item.innerText += "\n" + distance;
                 if (distance < 3) {
                     distance = 3;
                 }
 
+                // Apply correct transforms
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
                     item.style.transform += "translate(0px, " + (distance / -1.2) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
-                    item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + (distance / -1.2) + "px)";
+                    item.style.webkitTransformOrigin = "50% 200px";
+                    item.style.webkitTransform += "translate(0px, " + (distance / -1.2) + "px)";
                 }
+
+                // Apply corresponding font effects.
+                item.style.fontSize = (90 + (item.getAttribute("_pop") * 10)) + "%";
+                if (distance < 10) {
+                    item.style.color = "white";
+                    item.style.fontSizeAdjust = "1.2";
+                } else {
+                    item.style.color = "#D3D3D3";
+                    item.style.fontSizeAdjust = "1.0";
+                }
+
+
             }
 
         } else {
