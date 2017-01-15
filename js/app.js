@@ -156,14 +156,26 @@
                 var brng = Math.degrees(Math.atan2(y, x));
                 document.getElementById("_" + (i+1)).innerText = "(" + brng + ")";
                 var angle = positionCurrent.hng - brng;
+
+                var radius_earth = 6371e3; // metres
+                var delta_lat = lat2-lat1;
+                var delta_lng = lng2-lng1;
+
+                var a = Math.sin(delta_lat/2) * Math.sin(delta_lat/2) +
+                    Math.cos(lat1) * Math.cos(lat2) *
+                    Math.sin(delta_lng/2) * Math.sin(delta_lng/2);
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+                var distance = radius_earth * c;
+
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + angle + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + (70 * (i + 1)) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / -10.0) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(" + angle + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + (70 * (i + 1)) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / -10.0) + "px)";
                 }
             }
 
