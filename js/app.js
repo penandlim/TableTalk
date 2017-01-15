@@ -4,7 +4,7 @@
     var request = new XMLHttpRequest();
     request.open('GET', 'http://35.161.59.228:12345/fakedata');
     request.onload = function() {
-        if (xhr.status === 200) {
+        if (request.status === 200) {
             var jsonResponse = JSON.parse(request.responseText);
             for (var i = 0; i < jsonResponse.length; i++) {
                 var new_word = document.createElement("div");
@@ -19,10 +19,10 @@
             }
         }
         else {
-            alert('Request failed.  Returned status of ' + xhr.status);
+            alert('Request failed.  Returned status of ' + request.status);
         }
     };
-    xhr.send();
+    request.send();
 
 
     //set to true for debugging output
