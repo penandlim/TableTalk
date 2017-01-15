@@ -2,7 +2,7 @@
   "use strict";
 
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://35.161.59.228:12345/fakedata', true);
+    request.open('GET', '//35.161.59.228:12345/fakedata', true);
     request.onload = function() {
         if (this.status === 200) {
             var jsonResponse = JSON.parse(this.responseText);
