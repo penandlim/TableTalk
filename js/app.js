@@ -213,11 +213,11 @@
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + ((distance / -0.8) - (!isCloseToInteractWith * 50)) + "px)";
+                    item.style.transform += "translate(0px, " + ((distance / -0.2) - (!isCloseToInteractWith * 50)) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.webkitTransformOrigin = "50% 200px";
-                    item.style.webkitTransform += "translate(0px, " + ((distance / -0.8) - (!isCloseToInteractWith * 50))  + "px)";
+                    item.style.webkitTransform += "translate(0px, " + ((distance / -0.2) - (!isCloseToInteractWith * 50))  + "px)";
                 }
 
 
