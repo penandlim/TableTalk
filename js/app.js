@@ -155,7 +155,7 @@
                     Math.sin(lat1)*Math.cos(lat2)*Math.cos(lng2-lng1);
                 var brng = Math.degrees(Math.atan2(y, x));
 
-                var angle = positionCurrent.hng + brng;
+                var angle = positionCurrent.hng - brng;
 
                 var radius_earth = 6371e3; // metres
                 var delta_lat = lat2-lat1;
