@@ -156,11 +156,12 @@
                 var x = Math.cos(lng1)*Math.sin(lng2) -
                     Math.sin(lng1)*Math.cos(lng2)*Math.cos(lat2-lat1);
                 var brng = Math.atan2(y, x).toDegrees();
-
+                alert(brng);
+                var angle = (positionCurrent.hng - brng);
                 if (typeof item.style.transform !== "undefined") {
-                    item.style.transform = "rotateZ(" + (positionCurrent.hng - brng) + "deg)";
+                    item.style.transform = "rotateZ(" + angle + "deg)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
-                    item.style.webkitTransform = "rotateZ(" + (positionCurrent.hng - brng) + "deg)";
+                    item.style.webkitTransform = "rotateZ(" + angle + "deg)";
                 }
             }
 
