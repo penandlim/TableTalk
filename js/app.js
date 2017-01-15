@@ -146,23 +146,20 @@
             var words = document.getElementsByClassName("word");
             var lng1 = Math.radians(positionCurrent.lng);
             var lat1 = Math.radians(positionCurrent.lat);
-            document.getElementById("_0").innerText = "(" + lat1 + ", " + lng1 + ")";
             for (var i = 0; i < words.length; ++i) {
                 var item = words[i];
                 var lng2 = Math.radians(item.getAttribute("_long"));
                 var lat2 = Math.radians(item.getAttribute("_lat"));
-                document.getElementById("_" + (i+1)).innerText = "(" + lat2 + ", " + lng2 + ")";
                 var y = Math.sin(lng2-lng1) * Math.cos(lat2);
-                document.getElementById("_" + (i+1)).innerText += "(" + y + ")";
                 var x = Math.cos(lat1)*Math.sin(lat2) -
                     Math.sin(lat1)*Math.cos(lat2)*Math.cos(lng2-lng1);
-                document.getElementById("_" + (i+1)).innerText += "(" + x + ")";
                 var brng = Math.degrees(Math.atan2(y, x));
+                document.getElementById("_" + (i+1)).innerText = "(" + brng + ")";
                 var angle = positionCurrent.hng - brng;
                 if (typeof item.style.transform !== "undefined") {
-                    item.style.transform = "rotateZ(" + angle + "deg)";
+                    item.style.transform = "rotate(" + angle + "deg)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
-                    item.style.webkitTransform = "rotateZ(" + angle + "deg)";
+                    item.style.webkitTransform = "rotate(" + angle + "deg)";
                 }
             }
 
