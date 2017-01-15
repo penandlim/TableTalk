@@ -268,14 +268,13 @@ header {
     width: 30%; 
     height: 60%; 
     position: absolute; 
-    right: 10%; 
-    top: 10%; 
+    right: 0%; 
+    bottom: 0%; 
     background:black; 
     font-family: digital; 
     z-index: 1; 
     overflow-y: scroll;
     overflow-x: hidden; 
-    visibility: hidden;
   }
 
   .enterMessage {
@@ -283,7 +282,7 @@ header {
     height: 60%; 
     position: absolute; 
     left: 35%; 
-    bottom: 40%; 
+    bottom: 0%; 
   }
 
   #typeBox {
