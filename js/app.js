@@ -146,6 +146,7 @@
             // }
 
             var words = document.getElementsByClassName('word');
+            alert("suh");
             var lng1 = Math.radians(positionCurrent.lng);
             var lat1 = Math.radians(positionCurrent.lat);
             for (var i = 0; i < words.length; ++i) {
@@ -156,7 +157,6 @@
                 var x = Math.cos(lng1)*Math.sin(lng2) -
                     Math.sin(lng1)*Math.cos(lng2)*Math.cos(lat2-lat1);
                 var brng = Math.atan2(y, x).toDegrees();
-                alert(brng);
                 var angle = (positionCurrent.hng - brng);
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + angle + "deg)";
