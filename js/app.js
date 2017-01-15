@@ -79,8 +79,7 @@ function sendMessage() {
   });
 
   xhr.open("POST", "https://tabletalk.larryschirmer.com:12345/fakedata/post");
-  xhr.setRequestHeader("content-type", "application/json");
-  xhr.setRequestHeader("cache-control", "no-cache");
+  xhr.setRequestHeader("content-type", "application/json");s
 
   xhr.send(data);
 }
