@@ -22,7 +22,7 @@
             alert('Request failed.  Returned status of ' + request.status);
         }
     };
-    request.send();
+    request.send(null);
 
 
     //set to true for debugging output
