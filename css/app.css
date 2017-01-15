@@ -12,6 +12,8 @@
   margin-top: -10%; /* Changes with height. */
   margin-left: -10%; /* Your width divided by 2. */
   text-align: center;
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
 
@@ -47,32 +49,11 @@ html {
 }
 
 
-[class^="column-"] {
-  display: inline-block;
-}
-
-  .column-33 {
-    width: 33.33333%;
-  }
-
-  .column-25 {
-    width: 25%;
-  }
-
-  .label {
-    font-size: 0.5rem;
-  }
-
-
 body {
   padding: 0;
   margin: 0;
   height: 100%;
 }
-
-
-
-
 
 header {
   padding: 0.5rem;
