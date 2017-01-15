@@ -266,12 +266,12 @@ header {
 
   #typeBox {
     position: absolute; 
-    margin: 5px; 
-    left: 5%; 
+    margin: 5px;
+    left: 20%;
     bottom: 25%; 
     width: 40%; 
-    height: 25px; 
-    margin:5px; 
+    height: 25px;
+    margin:5px;
     font-family: digital; 
     font-weight: bold; 
     font-size: 20px;

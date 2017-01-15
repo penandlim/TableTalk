@@ -27,6 +27,13 @@
 
     
 document.getElementById("send").addEventListener("click", sendMessage);
+document.getElementById("chatLog").addEventListener("click", closeChatLog);
+
+function closeChatLog() {
+    document.getElementById('chatLog').style.display = "none";
+    document.getElementById('typeBox').disabled = true;
+    document.getElementById('send').disabled = true;
+}
 
 function loadMessages() {
     document.getElementById('typeBox').disabled = false;
