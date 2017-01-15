@@ -14,7 +14,7 @@
                 new_word.setAttribute("_id", jsonResponse[i].mongoID);
                 new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
                 new_word.innerText = jsonResponse[i].messageHeading;
-                new_word.addEventListener("click", loadMessages(new_word.getAttribute("_id")), false);
+                new_word.addEventListener("onClick", loadMessages(new_word.getAttribute("_id")), false);
                 document.getElementById("words").appendChild(new_word);
             }
         }
@@ -34,7 +34,7 @@ function loadMessages(msgId) {
     document.getElementById('chatLog').style.visibility = "visible";
 
     var request = new XMLHttpRequest();
-    var url = "https://tabletalk.larryschirmer.com:12345/fakedata" + msgId;
+    var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + msgId;
     request.open('GET', url, true);
     request.onload = function() {
         if (this.status === 200) {
