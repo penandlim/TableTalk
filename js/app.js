@@ -133,7 +133,6 @@
             }
 
             positionCurrent.hng = heading + adjustment;
-            window.alert(positionCurrent.hng);
             var phase = positionCurrent.hng < 0 ? 360 + positionCurrent.hng : positionCurrent.hng;
             positionHng.textContent = (360 - phase | 0) + "°";
 
@@ -144,7 +143,8 @@
             // } else if (typeof rose.style.webkitTransform !== "undefined") {
             //     rose.style.webkitTransform = "rotateZ(" + positionCurrent.hng + "deg)";
             // }
-            var words = document.getElementsByClassName('word');
+            var words = document.getElementsByClassName("word");
+            document.getElementById("_1").innerText = words[0].innerText;
             var lng1 = Math.radians(positionCurrent.lng);
             var lat1 = Math.radians(positionCurrent.lat);
             for (var i = 0; i < words.length; ++i) {
