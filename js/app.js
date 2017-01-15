@@ -204,7 +204,7 @@
                     item.style.fontSizeAdjust = "1.2";
                     isCloseToInteractWith = true;
                 } else {
-                    item.style.color = "#D3D3D3";
+                    item.style.color = "#A9A9A9";
                     item.style.fontSizeAdjust = "1.0";
                     isCloseToInteractWith = false;
                 }
@@ -213,11 +213,11 @@
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + ((distance + isCloseToInteractWith * 300) / -1.2) + "px)";
+                    item.style.transform += "translate(0px, " + ((distance / -1.2) - (isCloseToInteractWith * 300)) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.webkitTransformOrigin = "50% 200px";
-                    item.style.webkitTransform += "translate(0px, " + ((distance + isCloseToInteractWith * 300) / -1.2)  + "px)";
+                    item.style.webkitTransform += "translate(0px, " + ((distance / -1.2) - (isCloseToInteractWith * 300))  + "px)";
                 }
 
 
