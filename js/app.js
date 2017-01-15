@@ -1,7 +1,31 @@
 (function () {
   "use strict";
 
-  //set to true for debugging output
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://35.161.59.228:12345/fakedata');
+    request.onload = function() {
+        if (xhr.status === 200) {
+            var jsonResponse = JSON.parse(request.responseText);
+            for (var i = 0; i < jsonResponse.length; i++) {
+                var new_word = document.createElement("div");
+                new_word.className = "name";
+                new_word.setAttribute("_lat", jsonResponse[i].lat);
+                new_word.setAttribute("_lng", jsonResponse[i].lon);
+                new_word.setAttribute("_pop", jsonResponse[i].pop);
+                new_word.setAttribute("_id", jsonResponse[i].mongoID);
+                new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
+                new_word.innerText = jsonResponse[i].messageHeading;
+                document.getElementById("words").appendChild(new_word);
+            }
+        }
+        else {
+            alert('Request failed.  Returned status of ' + xhr.status);
+        }
+    };
+    xhr.send();
+
+
+    //set to true for debugging output
   var debug = false;
 
   // our current position
@@ -170,7 +194,6 @@
                 if (distance < 3) {
                     distance = 3;
                 }
-                document.getElementById("_" + (i+1)).innerText = "(" + distance + ")";
 
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
@@ -291,7 +314,6 @@
       maximumAge: 0,
       timeout: 30000 //large timeout to accomodate slow GPS lock on some devices
   });
-
   checkLockable();
 
 }());
