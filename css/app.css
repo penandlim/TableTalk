@@ -12,8 +12,6 @@
   margin-top: -10%; /* Changes with height. */
   margin-left: -10%; /* Your width divided by 2. */
   text-align: center;
-  transform-style: preserve-3d;
-  transition: transform .5s;
 }
 
 
@@ -42,7 +40,6 @@ html {
   font-size: 16px;
   background-color: white;
   color: white;
-
   background: white url(../images/coffeeshop.jpg) 50% 50% no-repeat;
   background-size: cover;
   height: 100%;
