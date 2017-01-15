@@ -1,7 +1,7 @@
 (function () {
   "use strict";
     var request = new XMLHttpRequest();
-    request.open('GET', '//35.161.59.228:12345/fakedata', true);
+    request.open('GET', 'https://tabletalk.larryschirmer.com:12345/fakedata', true);
     request.onload = function() {
         if (this.status === 200) {
             var jsonResponse = JSON.parse(this.responseText);
@@ -34,7 +34,7 @@ function loadMessages(msgId) {
     document.getElementById('chat').style.visibility = "visible";
 
     var request = new XMLHttpRequest();
-    var url = '//35.161.59.228:12345/fakedata/' + msgId;
+    var url = "https://tabletalk.larryschirmer.com:12345/fakedata" + msgId;
     request.open('GET', url, true);
     request.onload = function() {
         if (this.status === 200) {
