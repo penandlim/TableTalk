@@ -1,6 +1,5 @@
 (function () {
   "use strict";
-
     var request = new XMLHttpRequest();
     request.open('GET', '//35.161.59.228:12345/fakedata', true);
     request.onload = function() {
@@ -15,6 +14,7 @@
                 new_word.setAttribute("_id", jsonResponse[i].mongoID);
                 new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
                 new_word.innerText = jsonResponse[i].messageHeading;
+                new_word.addEventListener("click", loadMessages(new_word.getAttribute("_id")), false);
                 document.getElementById("words").appendChild(new_word);
             }
         }
@@ -22,7 +22,36 @@
             alert('Request failed.  Returned status of ' + this.status);
         }
     };
+    
     request.send();
+
+    
+
+
+function loadMessages(msgId) {
+    document.getElementById('typeBox').disabled = false;
+    document.getElementById('send').disabled = false;
+    document.getElementById('chat').style.visibility = "visible";
+
+    var request = new XMLHttpRequest();
+    var url = '//35.161.59.228:12345/fakedata/' + msgId;
+    request.open('GET', url, true);
+    request.onload = function() {
+        if (this.status === 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+            for (var i = 0; i < jsonResponse.length; i++) {
+                var new_message = document.createElement("h2");
+                new_message.className = "message";
+                new_word.innerText = jsonResponse[i].msg;
+                document.getElementById("chatLog").appendChild(new_message);
+            }
+        }
+        else {
+            alert('Request failed.  Returned status of ' + this.status);
+        }
+    };
+    request.send();
+}
 
 
     //set to true for debugging output
@@ -209,12 +238,6 @@
                     isCloseToInteractWith = false;
                 }
 
-                //allows user to contrubute to conversation
-                if(isCloseToInteractWith) { 
-                  document.getElementById('typeBox').disabled = false;
-                  document.getElementById('send').disabled = false;
-                  document.getElementById('chat').style.visibility = "visible";
-                } 
 
                 // Apply correct transforms
                 if (typeof item.style.transform !== "undefined") {
@@ -226,7 +249,7 @@
                     item.style.webkitTransformOrigin = "50% 200px";
                     item.style.webkitTransform += "translate(0px, " + ((distance / -0.2) - (!isCloseToInteractWith * 50))  + "px)";
                 }
-
+ 
 
 
                 //making new topics glow potentialls 
