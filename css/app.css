@@ -242,7 +242,7 @@ header {
       }
 
   
-  div.chat {
+  #chatLog {
     width: 40%; 
     height: 60%; 
     position: absolute; 
