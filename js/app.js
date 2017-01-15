@@ -151,9 +151,9 @@
                 var item = words[i];
                 var lng2 = Math.radians(item.getAttribute("_long"));
                 var lat2 = Math.radians(item.getAttribute("_lat"));
-                var y = Math.sin(lat2-lat1) * Math.cos(lng2);
-                var x = Math.cos(lng1)*Math.sin(lng2) -
-                    Math.sin(lng1)*Math.cos(lng2)*Math.cos(lat2-lat1);
+                var y = Math.sin(lng2-lng1) * Math.cos(lat2);
+                var x = Math.cos(lat1)*Math.sin(lat2) -
+                    Math.sin(lat1)*Math.cos(lat2)*Math.cos(lng2-lng1);
                 var brng = Math.atan2(y, x).toDegrees();
                 document.getElementById("_" + (i+1)).innerText = "(" + brng + ")";
                 var angle = positionCurrent.hng - brng;
