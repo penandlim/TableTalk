@@ -172,7 +172,7 @@
             var lat1 = Math.radians(positionCurrent.lat);
             for (var i = 0; i < words.length; ++i) {
                 var item = words[i];
-                var lng2 = Math.radians(item.getAttribute("_long"));
+                var lng2 = Math.radians(item.getAttribute("_lng"));
                 var lat2 = Math.radians(item.getAttribute("_lat"));
                 var y = Math.sin(lng2-lng1) * Math.cos(lat2);
                 var x = Math.cos(lat1)*Math.sin(lat2) -
@@ -198,11 +198,11 @@
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + (distance / -10) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / -1.2) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 200px";
-                    item.style.transform += "translate(0px, " + (distance / -10) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / -1.2) + "px)";
                 }
             }
 
