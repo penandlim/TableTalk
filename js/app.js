@@ -159,10 +159,11 @@
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + angle + "deg)";
                     item.style.transform = "transform-origin: 50% 400%";
-                    item.style.marginBottom = "100px";
+                    item.style.marginBottom = "200px";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(" + angle + "deg)";
                     item.style.webkitTransform = "transform-origin: 50% 400%";
+                    item.style.marginBottom = "200px";
                 }
             }
 
