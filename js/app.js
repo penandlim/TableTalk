@@ -14,7 +14,7 @@
                 new_word.setAttribute("_id", jsonResponse[i].mongoID);
                 new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
                 new_word.innerText = jsonResponse[i].messageHeading;
-                new_word.addEventListener("click", loadMessages(new_word.getAttribute("_id")));
+                new_word.addEventListener("click", loadMessages);
                 document.getElementById("words").appendChild(new_word);
             }
         }
@@ -28,13 +28,13 @@
     
 
 
-function loadMessages(msgId) {
+function loadMessages() {
     document.getElementById('typeBox').disabled = false;
     document.getElementById('send').disabled = false;
-    document.getElementById('chatLog').style.visibility = "visible";
+    document.getElementById('chatLog').style.display = "block";
 
     var request = new XMLHttpRequest();
-    var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + msgId;
+    var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + this.getAttribute("_id");
     request.open('GET', url, true);
     request.onload = function() {
         if (this.status === 200) {
