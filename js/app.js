@@ -171,19 +171,17 @@
                 document.getElementById("_" + (i+1)).innerText = "(" + (distance/ 10.0) + ")";
 
                 if (typeof item.style.transform !== "undefined") {
-                    item.style.transform = "rotateZ(" + angle + "deg)";
+                    item.style.transform = "rotateZ(-" + angle + "deg)";
                     item.style.transformOrigin = "50% 100px";
                     item.style.transform += "translate(0px, " + (distance / 10.0) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
-                    item.style.webkitTransform = "rotateZ(" + angle + "deg)";
+                    item.style.webkitTransform = "rotateZ(-" + angle + "deg)";
                     item.style.transformOrigin = "50% 100px";
                     item.style.transform += "translate(0px, " + (distance / 10.0) + "px)";
                 }
             }
 
         } else {
-            // device can't show heading
-
             positionHng.textContent = "n/a";
             showHeadingWarning();
         }
