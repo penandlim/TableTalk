@@ -167,19 +167,19 @@
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
                 var distance = radius_earth * c;
-                if (distance < 10) {
-                    distance = 10;
+                if (distance < 5) {
+                    distance = 5;
                 }
-                document.getElementById("_" + (i+1)).innerText = "(" + (distance/ 10.0) + ")";
+                document.getElementById("_" + (i+1)).innerText = "(" + (distance/ 5.0) + ")";
 
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + (distance / 10.0) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / 5.0) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + (distance / 10.0) + "px)";
+                    item.style.transform += "translate(0px, " + (distance / 5.0) + "px)";
                 }
             }
 
