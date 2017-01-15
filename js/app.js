@@ -154,7 +154,7 @@
                 var x = Math.cos(lat1)*Math.sin(lat2) -
                     Math.sin(lat1)*Math.cos(lat2)*Math.cos(lng2-lng1);
                 var brng = Math.degrees(Math.atan2(y, x));
-                document.getElementById("_" + (i+1)).innerText = "(" + brng + ")";
+
                 var angle = positionCurrent.hng - brng;
 
                 var radius_earth = 6371e3; // metres
@@ -167,6 +167,8 @@
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
                 var distance = radius_earth * c;
+
+                document.getElementById("_" + (i+1)).innerText = "(" + (distance/ 10.0) + ")";
 
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + angle + "deg)";
