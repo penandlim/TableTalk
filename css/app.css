@@ -275,6 +275,7 @@ header {
     font-family: digital; 
     font-weight: bold; 
     font-size: 20px;
+    z-index: 5; 
   }
   h2.message {
     margin: 0px;  
