@@ -146,7 +146,7 @@
             var words = document.getElementsByClassName("word");
             var lng1 = Math.radians(positionCurrent.lng);
             var lat1 = Math.radians(positionCurrent.lat);
-            document.getElementById("_1").innerText = "(" + lng1 + ", " + lat1 + ")";
+            document.getElementById("_0").innerText = "(" + lng1 + ", " + lat1 + ")";
             for (var i = 0; i < words.length; ++i) {
                 var item = words[i];
                 var lng2 = Math.radians(item.getAttribute("_long"));
@@ -155,6 +155,7 @@
                 var x = Math.cos(lng1)*Math.sin(lng2) -
                     Math.sin(lng1)*Math.cos(lng2)*Math.cos(lat2-lat1);
                 var brng = Math.atan2(y, x).toDegrees();
+                document.getElementById("_" + (i+1)).innerText = "(" + brng + ")";
                 var angle = positionCurrent.hng - brng;
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + angle + "deg)";
