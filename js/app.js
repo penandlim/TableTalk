@@ -31,7 +31,7 @@
 function loadMessages(msgId) {
     document.getElementById('typeBox').disabled = false;
     document.getElementById('send').disabled = false;
-    document.getElementById('chat').style.visibility = "visible";
+    document.getElementById('chatLog').style.visibility = "visible";
 
     var request = new XMLHttpRequest();
     var url = '//35.161.59.228:12345/fakedata/' + msgId;
