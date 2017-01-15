@@ -2,10 +2,10 @@
   "use strict";
 
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://35.161.59.228:12345/fakedata', true);
+    request.open('GET', 'https://35.161.59.228:12345/fakedata', true);
     request.onload = function() {
         if (this.status === 200) {
-            var jsonResponse = JSON.parse(request.responseText);
+            var jsonResponse = JSON.parse(this.responseText);
             for (var i = 0; i < jsonResponse.length; i++) {
                 var new_word = document.createElement("div");
                 new_word.className = "name";
@@ -19,10 +19,10 @@
             }
         }
         else {
-            alert('Request failed.  Returned status of ' + request.status);
+            alert('Request failed.  Returned status of ' + this.status);
         }
     };
-    request.send(null);
+    request.send();
 
 
     //set to true for debugging output
