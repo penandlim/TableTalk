@@ -151,11 +151,14 @@
                 var item = words[i];
                 var lng2 = Math.radians(item.getAttribute("_long"));
                 var lat2 = Math.radians(item.getAttribute("_lat"));
+                document.getElementById("_" + (i+1)).innerText = "(" + lat2 + ", " + lng2 + ")";
                 var y = Math.sin(lng2-lng1) * Math.cos(lat2);
+                document.getElementById("_" + (i+1)).innerText += "(" + y + ")";
                 var x = Math.cos(lat1)*Math.sin(lat2) -
                     Math.sin(lat1)*Math.cos(lat2)*Math.cos(lng2-lng1);
+                document.getElementById("_" + (i+1)).innerText += "(" + x + ")";
                 var brng = Math.atan2(y, x).toDegrees();
-                document.getElementById("_" + (i+1)).innerText = "(" + brng + ")"; // ?? not hitting this
+                document.getElementById("_" + (i+1)).innerText += "(" + brng + ")"; // ?? not hitting this
                 var angle = positionCurrent.hng - brng;
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + angle + "deg)";
