@@ -2,9 +2,9 @@
   "use strict";
 
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://35.161.59.228:12345/fakedata');
+    request.open('GET', 'http://35.161.59.228:12345/fakedata', true);
     request.onload = function() {
-        if (request.status === 200) {
+        if (this.status === 200) {
             var jsonResponse = JSON.parse(request.responseText);
             for (var i = 0; i < jsonResponse.length; i++) {
                 var new_word = document.createElement("div");
