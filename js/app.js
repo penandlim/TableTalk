@@ -157,10 +157,10 @@
                 document.getElementById("_" + (i+1)).innerText = "(" + brng + ")";
                 var angle = positionCurrent.hng - brng;
                 if (typeof item.style.transform !== "undefined") {
-                    item.style.transform = "rotateY(" + angle + "deg)";
+                    item.style.transform = "rotateZ(" + angle + "deg)";
                     item.style.transform = "transform-origin: 50% 200%";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
-                    item.style.webkitTransform = "rotateY(" + angle + "deg)";
+                    item.style.webkitTransform = "rotateZ(" + angle + "deg)";
                     item.style.webkitTransform = "transform-origin: 50% 200%";
                 }
             }
