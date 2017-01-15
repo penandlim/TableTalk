@@ -87,6 +87,16 @@
     return orientation;
   }
 
+    // Converts from degrees to radians.
+    Math.radians = function(degrees) {
+        return degrees * Math.PI / 180;
+    };
+
+    // Converts from radians to degrees.
+    Math.degrees = function(radians) {
+        return radians * 180 / Math.PI;
+    };
+
     // called on device orientation change
     function onHeadingChange(event) {
         var heading = event.alpha;
@@ -134,6 +144,26 @@
             } else if (typeof rose.style.webkitTransform !== "undefined") {
                 rose.style.webkitTransform = "rotateZ(" + positionCurrent.hng + "deg)";
             }
+
+            var words = document.getElementsByClassName('word');
+            var lng1 = Math.radians(positionCurrent.lng);
+            var lat1 = Math.radians(positionCurrent.lat);
+            for (var i = 0; i < words.length; ++i) {
+                var item = words[i];
+                var lng2 = Math.radians(item.getAttribute("_long"));
+                var lat2 = Math.radians(item.getAttribute("_lat"));
+                var y = Math.sin(lat2-lat1) * Math.cos(lng2);
+                var x = Math.cos(lng1)*Math.sin(lng2) -
+                    Math.sin(lng1)*Math.cos(lng2)*Math.cos(lat2-lat1);
+                var brng = Math.atan2(y, x).toDegrees();
+
+                if (typeof item.style.transform !== "undefined") {
+                    item.style.transform = "rotateZ(" + (positionCurrent.hng - brng) + "deg)";
+                } else if (typeof item.style.webkitTransform !== "undefined") {
+                    item.style.webkitTransform = "rotateZ(" + (positionCurrent.hng - brng) + "deg)";
+                }
+            }
+
         } else {
             // device can't show heading
 
