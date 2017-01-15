@@ -14,7 +14,7 @@
                 new_word.setAttribute("_id", jsonResponse[i].mongoID);
                 new_word.setAttribute("_latestMessage", jsonResponse[i].latestMessage);
                 new_word.innerText = jsonResponse[i].messageHeading;
-                new_word.addEventListener("onClick", loadMessages(new_word.getAttribute("_id")), false);
+                new_word.addEventListener("click", loadMessages(new_word.getAttribute("_id")));
                 document.getElementById("words").appendChild(new_word);
             }
         }
