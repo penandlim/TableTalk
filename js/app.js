@@ -33,6 +33,8 @@ function loadMessages() {
     document.getElementById('send').disabled = false;
     document.getElementById('chatLog').style.display = "block";
 
+    document.getElementById('chatLog').innerHTML = "";
+
     var request = new XMLHttpRequest();
     var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + this.getAttribute("_id");
     request.open('GET', url, true);
@@ -44,6 +46,8 @@ function loadMessages() {
                 new_message.className = "message";
                 new_message.innerText = jsonResponse[i].msg;
                 document.getElementById("chatLog").appendChild(new_message);
+
+                document.getElementById("typeBox").setAttribute("_msgId",  this.getAttribute("_id"));
             }
         }
         else {
@@ -53,6 +57,32 @@ function loadMessages() {
     request.send();
 }
 
+function sendMessage() {
+  var data = JSON.stringify({
+  "msg": document.getElementById("typeBox").value,
+  "msgID": document.getElementById("typeBox").getAttribute("_msgId")
+  });
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4 && this.status === 200) {
+    console.log(this.responseText);
+    var new_message = document.createElement("h2");
+    new_message.className = "message";
+    new_message.innerText = document.getElementById("typeBox").value;
+    document.getElementById("chatLog").appendChild(new_message);
+    document.getElementById("typeBox").value = "";
+  }
+  });
+
+  xhr.open("POST", "https://tabletalk.larryschirmer.com:12345/fakedata/post");
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.setRequestHeader("cache-control", "no-cache");
+
+  xhr.send(data);
+}
 
     //set to true for debugging output
   var debug = false;
