@@ -194,7 +194,7 @@
                 if (distance < 3) {
                     distance = 3;
                 }
-                item.innerText = distance.substring(0, 4) + "m";
+                item.innerText = parseInt(distance) + "m";
 
                 // Apply corresponding font effects.
                 item.style.fontSize = (90 + (item.getAttribute("_pop") * 10)) + "%";
