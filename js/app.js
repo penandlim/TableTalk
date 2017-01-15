@@ -170,16 +170,16 @@
                 if (distance < 3) {
                     distance = 3;
                 }
-                document.getElementById("_" + (i+1)).innerText = "(" + (distance/ 3.0) + ")";
+                document.getElementById("_" + (i+1)).innerText = "(" + distance + ")";
 
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + (distance / 3.0) + "px)";
+                    item.style.transform += "translate(0px, " + distance + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + (distance / 3.0) + "px)";
+                    item.style.transform += "translate(0px, " + distance + "px)";
                 }
             }
 
