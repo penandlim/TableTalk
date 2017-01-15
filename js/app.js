@@ -223,7 +223,8 @@ function loadMessages() {
                 if (distance < 1) {
                     distance = 1;
                 }
-                item.innerText = parseInt(distance) + "m";
+                // Distance Debug
+                // item.innerText = parseInt(distance) + "m";
 
                 // Apply corresponding font effects.
                 item.style.fontSize = (90 + (item.getAttribute("_pop") * 10)) + "%";
