@@ -47,7 +47,6 @@ function loadMessages() {
                 new_message.className = "message";
                 new_message.innerText = jsonResponse[i].msg;
                 document.getElementById("chatLog").appendChild(new_message);
-
                 document.getElementById("typeBox").setAttribute("_msgId",  save);
             }
         }
