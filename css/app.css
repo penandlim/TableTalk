@@ -14,8 +14,6 @@
   text-align: center;
   transform-style: preserve-3d;
   transition: transform .5s;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
 }
 
 
