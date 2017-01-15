@@ -199,7 +199,7 @@
                 // Apply corresponding font effects.
                 item.style.fontSize = (90 + (item.getAttribute("_pop") * 10)) + "%";
                 var isCloseToInteractWith;
-                if (distance < 10) {
+                if (distance <= 10) {
                     item.style.color = "white";
                     item.style.fontSizeAdjust = "1.2";
                     isCloseToInteractWith = true;
