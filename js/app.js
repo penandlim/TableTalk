@@ -175,11 +175,11 @@
                 if (typeof item.style.transform !== "undefined") {
                     item.style.transform = "rotateZ(" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + distance + "px)";
+                    item.style.transform += "translate(0px, " - (distance / 3.0) + "px)";
                 } else if (typeof item.style.webkitTransform !== "undefined") {
                     item.style.webkitTransform = "rotateZ(-" + (-1 * angle) + "deg)";
                     item.style.transformOrigin = "50% 100px";
-                    item.style.transform += "translate(0px, " + distance + "px)";
+                    item.style.transform += "translate(0px, " - (distance / 3.0) + "px)";
                 }
             }
 
