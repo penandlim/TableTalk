@@ -144,9 +144,9 @@
             // } else if (typeof rose.style.webkitTransform !== "undefined") {
             //     rose.style.webkitTransform = "rotateZ(" + positionCurrent.hng + "deg)";
             // }
-
-            var words = document.getElementsByClassName('word');
             alert("suh");
+            var words = document.getElementsByClassName('word');
+            alert("bro");
             var lng1 = Math.radians(positionCurrent.lng);
             var lat1 = Math.radians(positionCurrent.lat);
             for (var i = 0; i < words.length; ++i) {
