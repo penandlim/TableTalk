@@ -1,5 +1,5 @@
 # TableTalk
-[Click here to Demo (Use iOS web Browser)](https://penandlim.github.io/TableTalk)
+[Click here to Demo (Use iOS web Browser)](https://tabletalk.larryschirmer.com/)
 
 ###TODO: 
 * (1) moving the server side part to a real domain name 
