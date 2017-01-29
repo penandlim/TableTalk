@@ -1,7 +1,7 @@
 (function () {
   "use strict";
     var request = new XMLHttpRequest();
-    request.open('GET', 'https://tabletalk.larryschirmer.com:12345/fakedata', true);
+    request.open('GET', 'https://klatelbat.com:12345/getMSGThreads', true);
     request.onload = function() {
         if (this.status === 200) {
             var jsonResponse = JSON.parse(this.responseText);
@@ -27,23 +27,24 @@
 
     
 document.getElementById("send").addEventListener("click", sendMessage);
+document.getElementById("create").addEventListener("click", createThread);
 document.getElementById("chatLog").addEventListener("click", closeChatLog);
 
 function closeChatLog() {
     document.getElementById('chatLog').style.display = "none";
-    document.getElementById('typeBox').disabled = true;
     document.getElementById('send').disabled = true;
+    document.getElementById('create').disabled = false; 
 }
 
 function loadMessages() {
-    document.getElementById('typeBox').disabled = false;
     document.getElementById('send').disabled = false;
+    document.getElementById('create').disabled = true; 
     document.getElementById('chatLog').style.display = "block";
 
     document.getElementById('chatLog').innerHTML = "";
 
     var request = new XMLHttpRequest();
-    var url = "https://tabletalk.larryschirmer.com:12345/fakedata/" + this.getAttribute("_id");
+    var url = "https://klatelbat.com:12345/getMSGThreadMessaages/" + this.getAttribute("_id");
     var save = this.getAttribute("_id");
     request.open('GET', url, true);
     request.withCredentials = false;
@@ -81,14 +82,52 @@ function sendMessage() {
     new_message.className = "message";
     new_message.innerText = document.getElementById("typeBox").value;
     document.getElementById("chatLog").appendChild(new_message);
-    document.getElementById("typeBox").value = "";
-  
+    document.getElementById("typeBox").value = "";  
   });
 
-  xhr.open("POST", "https://tabletalk.larryschirmer.com:12345/fakedata/post");
+  xhr.open("POST", "https://klatelbat.com:12345/newMSG/post");
   xhr.setRequestHeader("content-type", "application/json");
 
   xhr.send(data);
+}
+
+function createThread() {
+  var title = document.getElementById("typeBox").value;
+  var lat = positionCurrent.lat;
+  var lng = positionCurrent.lng;
+
+  var data = JSON.stringify({
+    "msgHead": title,
+    "lat": lat, 
+    "lon": lng
+  });
+
+  var request = new XMLHttpRequest();
+  request.withCredentials = true;
+
+  request.addEventListener("readystatechange", function() {
+    if(this.readyState == 4) {
+      console.log(this.responseText);
+      jsonResponse = JSON.parse(this.responseText);
+
+      //show the new word to represent thread
+      var newWord = document.createElement("div");
+      newWord.className = "word";
+      newWord.setAttribute("_lat", lat);
+      newWord.setAttribute("_lng", lng);
+      newWord.setAttribute("_pop", 0);
+      newWord.setAttribute("_id", jsonResponse.mongoID);
+      newWord.setAttribute("_latestMessage", jsonResponse.latestMessage);
+      newWord.innerText = title;
+      newWord.addEventListener("click", loadMessages);
+      document.getElementById("words").appendChild(newWord);
+    }
+  });
+
+  request.open("POST", "https://klatelbat.com:12345/newmsgthread/post");
+  request.setRequestHeader("content-type", "application/json");
+  request.setRequestHeader("cache-control", "no-cache");
+  request.send(data);
 }
 
     //set to true for debugging output
