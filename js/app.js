@@ -44,7 +44,7 @@ function loadMessages() {
     document.getElementById('chatLog').innerHTML = "";
 
     var request = new XMLHttpRequest();
-    var url = "https://klatelbat.com:12345/getMSGThreadMessaages/" + this.getAttribute("_id");
+    var url = "https://klatelbat.com:12345/getMSGThreadMessages/" + this.getAttribute("_id");
     var save = this.getAttribute("_id");
     request.open('GET', url, true);
     request.withCredentials = false;
@@ -108,7 +108,7 @@ function createThread() {
   request.addEventListener("readystatechange", function() {
     if(this.readyState == 4) {
       console.log(this.responseText);
-      jsonResponse = JSON.parse(this.responseText);
+      var jsonResponse = JSON.parse(this.responseText);
 
       //show the new word to represent thread
       var newWord = document.createElement("div");
