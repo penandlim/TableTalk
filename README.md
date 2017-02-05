@@ -1,5 +1,5 @@
 # TableTalk
-[Click here to Demo (Use iOS web Browser)](https://tabletalk.larryschirmer.com/)
+[Click here to Demo (Use iOS web Browser)](https://klatelbat.com/)
 
 ###TODO: 
 * (1) moving the server side part to a real domain name 
