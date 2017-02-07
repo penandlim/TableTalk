@@ -2,6 +2,7 @@
   "use strict";
     var request = new XMLHttpRequest();
     request.open('GET', 'https://klatelbat.com:12345/getMSGThreads', true);
+    console.log("loading..");
     request.onload = function() {
         if (this.status === 200) {
             var jsonResponse = JSON.parse(this.responseText);
@@ -16,10 +17,11 @@
                 new_word.innerText = jsonResponse[i].messageHeading;
                 new_word.addEventListener("click", loadMessages);
                 document.getElementById("words").appendChild(new_word);
+                console.log("done!");
             }
         }
         else {
-            alert('Request failed.  Returned status of ' + this.status);
+            console.log('Request failed.  Returned status of ' + this.status);
         }
     };
     
@@ -103,7 +105,7 @@ function createThread() {
   });
 
   var request = new XMLHttpRequest();
-  request.withCredentials = true;
+  request.withCredentials = false;
 
   request.addEventListener("readystatechange", function() {
     if(this.readyState == 4) {
