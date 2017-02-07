@@ -128,7 +128,7 @@ function createThread() {
 
   request.open("POST", "https://klatelbat.com:12345/newmsgthread/post");
   request.setRequestHeader("content-type", "application/json");
-  request.setRequestHeader("cache-control", "no-cache");
+  //request.setRequestHeader("cache-control", "no-cache");
   request.send(data);
 }
 
